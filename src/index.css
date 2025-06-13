@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-@theme {
+:root {
   --default-font-family: "Lato", serif;
-
+  
   --color-blue-100: #2E3DA3;
   --color-blue-200: #5165E1;
   --color-blue-300: #8996EB;
@@ -18,6 +18,4 @@
   --color-pink-100: #CC3D6A;
   --color-blue-100: #355EC5;
   --color-green-100: #508B26;
-
-  --text-xxs: 0.625rem;
 }

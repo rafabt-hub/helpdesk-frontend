@@ -2,14 +2,18 @@ import { Input } from "../components/Input"
 
 export function SignIn() {
   return (
-    <form className="w-full flex flex-col gap-4 lg:gap-20">
-      <div className="lg:mt-20 p-4 lg:p-20">
-        <h1 className="mt-6 text-2xl lg:mb-5 lg:text-8xl text-[var(--color-gray-100)]">Acesse o portal</h1>
-        <p className="text-[var(--color-gray-400)] lg:text-6xl">Entre usando seu e-mail e senha cadastrados</p>
-      </div>
+    <div className="lg:w-310 lg:h-520 lg:p-24 border rounded-3xl border-[var(--color-gray-500)]">
+      <form className="lg:w-260 flex flex-col gap-10 lg:gap-40">
+        <div>
+          <h1 className="lg:text-8xl text-[var(--color-gray-100)] mb-2 lg:mb-8">Acesse o portal</h1>
+          <p className="lg:text-5xl text-[var(--color-gray-400)] lg:mb-10">Entre usando seu e-mail e senha cadastrados</p>
+        </div>
 
-      <Input required legend="E-mail" type="E-mail" placeholder="exemplo@email.com"/>
-      <Input required legend="Senha" type="password" placeholder="Digite sua senha"/>
-    </form>
+        <Input required legend="E-MAIL" type="email" placeholder="exemplo@email.com" />
+        <Input required legend="SENHA" type="password" placeholder="Digite sua senha" />
+
+        <button type="submit" className="mt-6 bg-[var(--color-gray-100)] text-white text-lg lg:text-6xl py-3 px-6 lg:py-6 lg:px-10 rounded hover:bg-[var(--color-blue-200)]">Entrar</button>
+      </form>
+    </div>
   )
 }

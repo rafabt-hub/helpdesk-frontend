@@ -2,12 +2,12 @@ type Props = React.ComponentProps<"input"> & {
   legend?: string
 }
 
-export function Input({ legend, ...rest}: Props) {
+export function Input({ legend, ...rest }: Props) {
   return (
-    <fieldset className="flex flex-1 max-h-20 p-4 lg:p-20 lg:max-h-60 focus-within:text-[var(--color-blue-100)]">
-      {legend && <legend className="text-[var(--color-gray-400)] lg:text-7xl">{legend}</legend>}
+    <fieldset className="flex flex-col gap-2 focus-within:text-[var(--color-blue-100)]">
+      {legend && (<legend className="lg:text-6xl text-inherit">{legend}</legend>)}
 
-      <input type="text" className="lg:text-7xl w-full h-8 lg:h-25 border-b-1 border-[var(--color-gray-400)] focus:border-[var(--color-blue-100)] focus:outline-none" {...rest} />
+      <input className="border-b border-[var(--color-gray-400)] focus:border-[var(--color-blue-100)] focus:outline-none py-2 px-1 lg:mt-5 lg:py-6 lg:px-10 lg:text-6xl" {...rest} />
     </fieldset>
   )
 }

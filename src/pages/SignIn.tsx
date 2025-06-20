@@ -1,17 +1,39 @@
 import { Input } from "../components/Input"
 import { Button } from "../components/Button"
+import { useState } from "react"
 
 export function SignIn() {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [isLoading, setIsloading] = useState(false)
+
+  function onSubmit(e: React.FormEvent) {
+    e.preventDefault()
+  }
+
   return (
     <div className="lg:w-100 w-85 h-80 flex gap-5 border rounded-2xl border-[var(--color-gray-500)]">
-      <form className="w-full flex flex-col items-center p-4 gap-5">
+      <form onSubmit={onSubmit} className="w-full flex flex-col items-center p-4 gap-5">
         <div className="w-full">
           <h1 className="text-xl text-[var(--color-gray-100)] mb-2">Acesse o portal</h1>
           <p className="text-xs text-[var(--color-gray-400)]">Entre usando seu e-mail e senha cadastrados</p>
         </div>
 
-        <Input required legend="E-MAIL" type="email" placeholder="exemplo@email.com" />
-        <Input required legend="SENHA" type="password" placeholder="Digite sua senha" />
+        <Input 
+        required 
+        legend="E-MAIL" 
+        type="email" 
+        placeholder="exemplo@email.com" 
+        onChange={(e) => setEmail(e.target.value)} 
+        />
+
+        <Input 
+        required 
+        legend="SENHA" 
+        type="password" 
+        placeholder="Digite sua senha"
+        onChange={(e) => setPassword(e.target.value)}
+        />
 
         <Button>Entrar</Button>
 
@@ -19,7 +41,7 @@ export function SignIn() {
          <h1 className="w-full m-0 text-sm text-[var(--color-gray-100)] mb-2">Ainda não tem uma conta?</h1>
          <p className="w-full m-0 text-sm text-[var(--color-gray-400)]">Cadastre agora mesmo</p>
 
-         <button type="submit" className="w-full mt-6 bg-[var(--color-gray-500)] text-black text-sm py-3 px-6 rounded hover:bg-[var(--color-gray-300)] transition ease-linear cursor-pointer">Criar conta</button>    
+         <Button variant="white">Criar conta</Button>    
         </div>
       </form>
     </div>

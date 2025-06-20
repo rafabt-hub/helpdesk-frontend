@@ -35,13 +35,13 @@ export function SignIn() {
         onChange={(e) => setPassword(e.target.value)}
         />
 
-        <Button>Entrar</Button>
+        <Button type="submit" isLoading={isLoading}>Entrar</Button>
 
         <div className="lg:w-100 w-85 flex flex-col p-4 mt-4 border rounded-2xl border-[var(--color-gray-500)]">
          <h1 className="w-full m-0 text-sm text-[var(--color-gray-100)] mb-2">Ainda não tem uma conta?</h1>
          <p className="w-full m-0 text-sm text-[var(--color-gray-400)]">Cadastre agora mesmo</p>
 
-         <Button variant="white">Criar conta</Button>    
+         <Button variant="white" href="/signup">Criar conta</Button>   
         </div>
       </form>
     </div>

@@ -15,7 +15,7 @@ export function SignUp() {
   }
 
   return (
-    <div className="lg:w-100 w-85 h-105 flex gap-4 border rounded-2xl border-[var(--color-gray-500)]">
+    <div className="lg:w-100 w-85 h-95 flex gap-4 border rounded-2xl border-[var(--color-gray-500)]">
       <form onSubmit={onSubmit} className="w-full flex flex-col items-center p-4 gap-3">
         <div className="w-full">
           <h1 className="text-xl text-[var(--color-gray-100)] mb-2">Crie sua conta</h1>

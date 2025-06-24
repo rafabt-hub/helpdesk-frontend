@@ -32,7 +32,7 @@ export function ProfileMenu() {
             <img  className="w-5 h-5" src={circleUser} alt="usuario"/>
             Perfil
           </button>
-          <button className="flex w-full text-left items-center gap-2 px-4 py-2 hover:bg-gray-100">
+          <button className="flex w-full text-left items-center text-red-700 gap-2 px-4 py-2 hover:bg-gray-100">
             <img  className="w-4 h-4" src={logout} alt=""/>
             Sair
           </button>

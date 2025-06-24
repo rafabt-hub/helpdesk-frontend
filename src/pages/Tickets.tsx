@@ -106,7 +106,7 @@ export function Tickets() {
       <div className="lg:hidden">
         {chamados.length > 0 ? (
           chamados.map(chamado => (
-            <div key={chamado.id} className="border-b last:border-b-0 p-4">
+            <div key={chamado.id} className="border-b border-[var(--color-gray-400)] last:border-b-0 p-4">
               <div className="flex justify-between items-start mb-2">
                 <div>
                   <p className="font-bold text-[var(--color-gray-200)] truncate pr-2">{chamado.titulo}</p>

@@ -1,11 +1,11 @@
 import { Outlet } from "react-router"
 import tool from "../assets/icons/tool.svg"
 import users from "../assets/icons/users.svg"
-import menuSvg from "../assets/icons/menu.svg"
 import logoSvg from "../assets/Logo_IconDark.svg"
 import clipboard from "../assets/icons/clipboard-list.svg"
 import briefcase from "../assets/icons/briefcase-business.svg"
 import { ProfileMenu } from "./Menu-button"
+import { SmallMenu } from "./Small-menu"
 
 export function AppLayout() {
   return (
@@ -62,7 +62,7 @@ export function AppLayout() {
       <div className="flex-1 flex flex-col mt-4 w-full lg:w-auto">
         <header className="lg:hidden flex items-center justify-between p-4 bg-black text-white shadow-md">
           <button className="p-2 bg-[var(--color-gray-200)] rounded">
-            <span className="w-6 h-6"><img src={menuSvg}></img></span>
+            <SmallMenu />
           </button>
           <div className="flex items-center">
             <div className="w-9 h-9 flex items-center justify-center">

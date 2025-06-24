@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import penline from "../assets/icons/pen-line.svg"
+import circleHelp from "../assets/icons/circle-help.svg"
+import clock from "../assets/icons/clock-2.svg"
+import checked from "../assets/icons/circle-check-big.svg"
 
-type StatusType = 'Aberta' | 'Em atendimento' | 'Encerrado';
+type StatusType = 'Aberto' | 'Em atendimento' | 'Encerrado';
 interface Chamado {
   id: string;
   atualizado: string;
@@ -13,13 +17,44 @@ interface Chamado {
 }
 
 const StatusBadge = ({ status }: { status: StatusType }) => {
-    const statusStyles: Record<StatusType, string> = { 'Aberta': 'bg-red-100 text-red-800', 'Em atendimento': 'bg-blue-100 text-blue-800', 'Encerrado': 'bg-green-100 text-green-800' };
-    const dotStyles: Record<StatusType, string> = { 'Aberta': 'bg-red-500', 'Em atendimento': 'bg-blue-500', 'Encerrado': 'bg-green-500' };
-    return ( <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${statusStyles[status]}`}> <span className={`w-2 h-2 mr-1.5 rounded-full ${dotStyles[status]}`}></span> {status} </span> );
+    const statusStyles: Record<StatusType, string> = { 'Aberto': 'bg-[var(--color-gray-500)] text-[var(--color-red-100)]', 'Em atendimento': 'bg-[var(--color-gray-500)] text-[var(--color-blue-100)]', 'Encerrado': 'bg-[var(--color-gray-500)] text-[var(--color-green-100)]' };
+    const statusIcons: Record<StatusType, string> = { 'Aberto': circleHelp, 'Em atendimento': clock, 'Encerrado': checked,};
+    return ( <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${statusStyles[status]}`}> <img src={statusIcons[status]} alt={status} className="w-4 h-4 mr-1.5" /> {status} </span> );
 };
 
 export function Tickets() {
-  const [chamados, setChamados] = useState<Chamado[]>([]);
+  const [chamados, setChamados] = useState<Chamado[]>([
+  {
+    id: 'CH001',
+    atualizado: '2025-06-23 14:20',
+    titulo: 'Erro ao acessar sistema',
+    servico: 'Suporte técnico',
+    valor: '150,00',
+    cliente: { nome: 'João da Silva', iniciais: 'JS' },
+    tecnico: { nome: 'Carlos Almeida', iniciais: 'CA' },
+    status: 'Aberto',
+  },
+  {
+    id: 'CH002',
+    atualizado: '2025-06-22 09:45',
+    titulo: 'Instalação de impressora',
+    servico: 'Instalação de hardware',
+    valor: '200,00',
+    cliente: { nome: 'Maria Oliveira', iniciais: 'MO' },
+    tecnico: { nome: 'Fernanda Souza', iniciais: 'FS' },
+    status: 'Em atendimento',
+  },
+  {
+    id: 'CH003',
+    atualizado: '2025-06-21 17:10',
+    titulo: 'Atualização de sistema',
+    servico: 'Manutenção de software',
+    valor: '350,00',
+    cliente: { nome: 'Empresa XYZ', iniciais: 'EX' },
+    tecnico: { nome: 'Bruno Lima', iniciais: 'BL' },
+    status: 'Encerrado',
+  },
+]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -46,7 +81,7 @@ export function Tickets() {
           <tbody className="text-[var(--color-gray-200)]">
             {chamados.length > 0 ? (
               chamados.map(chamado => (
-                <tr key={chamado.id} className="border-b hover:bg-gray-50">
+                <tr key={chamado.id} className="border-b border-[var(--color-gray-400)] hover:bg-gray-50">
                   <td className="px-6 py-4 whitespace-nowrap">{chamado.atualizado.split(' ')[0]}<br/><span className="text-[var(--color-gray-200)]">{chamado.atualizado.split(' ')[1]}</span></td>
                   <td className="px-6 py-4">{chamado.id}</td>
                   <td className="px-6 py-4">{chamado.titulo}<br/><span className="text-[var(--color-gray-100)]">{chamado.servico}</span></td>
@@ -54,7 +89,7 @@ export function Tickets() {
                   <td className="px-6 py-4"><div className="flex items-center"><div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mr-2">{chamado.cliente.iniciais}</div>{chamado.cliente.nome}</div></td>
                   <td className="px-6 py-4"><div className="flex items-center"><div className="w-8 h-8 rounded-full bg-indigo-500 text-white flex items-center justify-center text-xs font-bold mr-2">{chamado.tecnico.iniciais}</div>{chamado.tecnico.nome}</div></td>
                   <td className="px-6 py-4"><StatusBadge status={chamado.status} /></td>
-                  <td className="px-6 py-4"><button className="p-1"><span className="w-5 h-5">[Edit]</span></button></td>
+                  <td className="px-6 py-4"><button className="p-1"><img src={penline} className="w-5 h-5" /></button></td>
                 </tr>
               ))
             ) : (
@@ -77,7 +112,7 @@ export function Tickets() {
                   <p className="font-bold text-[var(--color-gray-200)] truncate pr-2">{chamado.titulo}</p>
                   <p className="text-sm text-[var(--color-gray-300)]">{chamado.servico}</p>
                 </div>
-                <button className="p-1 -mr-1 shrink-0"><span className="w-5 h-5">[Edit]</span></button>
+                <button className="p-1 -mr-1 shrink-0"><img src={penline} className="w-5 h-5" /></button>
               </div>
               <div className="flex justify-between items-center mt-2">
                 <StatusBadge status={chamado.status} />

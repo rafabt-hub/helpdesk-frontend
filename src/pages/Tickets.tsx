@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react'
 import penline from "../assets/icons/pen-line.svg"
 import circleHelp from "../assets/icons/circle-help.svg"
 import clock from "../assets/icons/clock-2.svg"

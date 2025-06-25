@@ -4,8 +4,8 @@ import users from "../assets/icons/users.svg"
 import logoSvg from "../assets/Logo_IconDark.svg"
 import clipboard from "../assets/icons/clipboard-list.svg"
 import briefcase from "../assets/icons/briefcase-business.svg"
-import { ProfileMenu } from "./Menu-button"
-import { SmallMenu } from "./Small-menu"
+import { ProfileMenu } from "../components/Menu-button"
+import { SmallMenu } from "../components/Small-menu"
 
 export function AppLayout() {
   return (

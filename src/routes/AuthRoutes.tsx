@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router"
 
-import { AuthLayout } from "../components/AuthLayout"
+import { AuthLayout } from "../layouts/AuthLayout"
 
 import { SignIn } from "../pages/SignIn"
 import { SignUp } from "../pages/Signup"

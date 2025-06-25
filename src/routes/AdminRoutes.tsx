@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router"
 
 import { Tickets } from "../pages/Tickets"
 import { NotFound } from "../pages/NotFound"
-import { AppLayout } from "../components/AppLayout"
+import { AppLayout } from "../layouts/AppLayout"
 
 export function AdminRoutes() {
   return (

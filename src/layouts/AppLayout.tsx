@@ -4,7 +4,7 @@ import users from "../assets/icons/users.svg"
 import logoSvg from "../assets/Logo_IconDark.svg"
 import clipboard from "../assets/icons/clipboard-list.svg"
 import briefcase from "../assets/icons/briefcase-business.svg"
-import { ProfileMenu } from "../components/Menu-button"
+import { AvatarMenu } from "../components/Avatar"
 import { SmallMenu } from "../components/Small-menu"
 
 export function AppLayout() {
@@ -51,7 +51,7 @@ export function AppLayout() {
         </nav>
 
         <div className="flex items-center mt-auto">
-          <ProfileMenu />
+          <AvatarMenu />
           <div className="ml-3">
             <p className="font-semibold text-sm">Usuário Adm</p>
             <p className="text-xs text-gray-400">user.adm@test.com</p>
@@ -73,7 +73,7 @@ export function AppLayout() {
               <p className="text-xs text-[var(--color-blue-100)] font-bold">ADMIN</p>
             </div>
           </div>
-          <ProfileMenu />
+          <AvatarMenu />
         </header>
         <main className="flex-1 bg-white rounded-t-[2rem] lg:rounded-tr-none p-4 lg:p-8 overflow-y-auto">
           <Outlet />

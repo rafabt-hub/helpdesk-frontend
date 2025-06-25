@@ -1,8 +1,8 @@
-import circleHelp from "../assets/icons/circle-help.svg";
-import clock from "../assets/icons/clock-2.svg";
-import checked from "../assets/icons/circle-check-big.svg";
+import circleHelp from "../assets/icons/circle-help.svg"
+import clock from "../assets/icons/clock-2.svg"
+import checked from "../assets/icons/circle-check-big.svg"
 
-type StatusType = 'Aberto' | 'Em atendimento' | 'Encerrado';
+type StatusType = 'Aberto' | 'Em atendimento' | 'Encerrado'
 
 const statusStyles: Record<StatusType, string> = {
   'Aberto': 'bg-[var(--color-gray-500)] text-[var(--color-red-100)]',

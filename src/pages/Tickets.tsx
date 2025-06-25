@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { TicketItem } from '../components/TicketItem'
+import { TicketDetails } from '../components/TicketDetails'
 
 type StatusType = 'Aberto' | 'Em atendimento' | 'Encerrado'
 interface Chamado {
@@ -22,47 +23,67 @@ export function Tickets() {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
+  const [selectedTicket, setSelectedTicket] = useState<Chamado | null>(null);
+
+  useEffect(() => {
+    const scrollContainer = document.querySelector('#root'); 
+
+    if (selectedTicket && scrollContainer) {
+      scrollContainer.classList.add('modal-aberto');
+    }
+
+    return () => {
+      if (scrollContainer) {
+        scrollContainer.classList.remove('modal-aberto');
+      }
+    };
+  }, [selectedTicket]);
+
+  const handleShowDetails = (chamado: Chamado) => setSelectedTicket(chamado);
+  const handleCloseDetails = () => setSelectedTicket(null);
+
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <div className="p-4 lg:p-6 border-b lg:border-none">
-        <h2 className="text-xl lg:text-2xl font-bold text-[var(--color-blue-100)]">Chamados</h2>
-      </div>
-      
-      <div className="hidden lg:block overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead className="text-left">
-            <tr>
-              <th className="px-6 py-3 text-[var(--color-gray-400)] font-medium">Atualizado em</th>
-              <th className="px-6 py-3 text-[var(--color-gray-400)] font-medium">Id</th>
-              <th className="px-6 py-3 text-[var(--color-gray-400)] font-medium">Título e Serviço</th>
-              <th className="px-6 py-3 text-[var(--color-gray-400)] font-medium">Valor total</th>
-              <th className="px-6 py-3 text-[var(--color-gray-400)] font-medium">Cliente</th>
-              <th className="px-6 py-3 text-[var(--color-gray-400)]">Técnico</th>
-              <th className="px-6 py-3 text-[var(--color-gray-400)]">Status</th>
-              <th className="px-6 py-3"></th>
-            </tr>
-          </thead>
-          <tbody className="text-[var(--color-gray-200)]">
-            {chamados.length > 0 ? (
-              chamados.map(chamado => (
-                <TicketItem key={chamado.id} chamado={chamado} layout="table" />
-              ))
-            ) : (
-              <tr><td colSpan={8} className="text-center py-10 text-[var(--color-gray-300)]">Nenhum chamado para exibir.</td></tr>
-            )}
-          </tbody>
-        </table>
+    <>
+      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+        <div className="p-4 lg:p-6 border-b lg:border-none">
+          <h2 className="text-xl lg:text-2xl font-bold text-[var(--color-blue-100)]">Chamados</h2>
+        </div>
+
+        <div className="hidden lg:block overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead className="text-left">
+              <tr>
+                <th className="px-6 py-3 text-[var(--color-gray-400)] font-medium">Atualizado em</th>
+                <th className="px-6 py-3 text-[var(--color-gray-400)] font-medium">Id</th>
+                <th className="px-6 py-3 text-[var(--color-gray-400)] font-medium">Título e Serviço</th>
+                <th className="px-6 py-3 text-[var(--color-gray-400)] font-medium">Valor total</th>
+                <th className="px-6 py-3 text-[var(--color-gray-400)] font-medium">Cliente</th>
+                <th className="px-6 py-3 text-[var(--color-gray-400)]">Técnico</th>
+                <th className="px-6 py-3 text-[var(--color-gray-400)]">Status</th>
+                <th className="px-6 py-3"></th>
+              </tr>
+            </thead>
+            <tbody className="text-[var(--color-gray-200)]">
+              {chamados.map(chamado => (
+                <TicketItem key={chamado.id} chamado={chamado} layout="table" onShowDetails={handleShowDetails} />
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="lg:hidden">
+          {chamados.map(chamado => (
+            <TicketItem key={chamado.id} chamado={chamado} layout="card" onShowDetails={handleShowDetails} />
+          ))}
+        </div>
       </div>
 
-      <div className="lg:hidden">
-        {chamados.length > 0 ? (
-          chamados.map(chamado => (
-            <TicketItem key={chamado.id} chamado={chamado} layout="card" />
-          ))
-        ) : (
-          <div className="p-10 text-center text-[var(--color-gray-200)]">Nenhum chamado para exibir.</div>
-        )}
-      </div>
-    </div>
+      {selectedTicket && (
+        <TicketDetails
+          chamado={selectedTicket}
+          onClose={handleCloseDetails}
+        />
+      )}
+    </>
   );
 }

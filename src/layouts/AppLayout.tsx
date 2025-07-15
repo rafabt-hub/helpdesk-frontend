@@ -1,4 +1,4 @@
-import { Outlet } from "react-router"
+import { Outlet, Link } from "react-router"
 import tool from "../assets/icons/tool.svg"
 import users from "../assets/icons/users.svg"
 import logoSvg from "../assets/Logo_IconDark.svg"
@@ -6,6 +6,7 @@ import clipboard from "../assets/icons/clipboard-list.svg"
 import briefcase from "../assets/icons/briefcase-business.svg"
 import { AvatarMenu } from "../components/Avatar"
 import { SmallMenu } from "../components/Small-menu"
+
 
 export function AppLayout() {
   return (
@@ -24,28 +25,28 @@ export function AppLayout() {
         <nav className="flex-1">
           <ul className="space-y-2">
             <li>
-              <a href="#" className="flex items-center p-3 rounded-lg text-gray-400  hover:bg-[var(--color-blue-100)] hover:text-white">
+              <Link to="/" className="flex items-center p-3 rounded-lg text-gray-400  hover:bg-[var(--color-blue-100)] hover:text-white">
                 <img className="w-5 h-5 mr-4" src={clipboard} alt="lista" />
                 <span className="font-medium">Chamados</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center p-3 rounded-lg text-gray-400 hover:bg-[var(--color-blue-100)] hover:text-white">
+              <Link to="/technicians" className="flex items-center p-3 rounded-lg text-gray-400 hover:bg-[var(--color-blue-100)] hover:text-white">
                 <img className="w-5 h-5 mr-4" src={users} alt="usuarios" />
                 <span className="font-medium">Técnicos</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center p-3 rounded-lg text-gray-400 hover:bg-[var(--color-blue-100)] hover:text-white">
+              <Link to="/clients" className="flex items-center p-3 rounded-lg text-gray-400 hover:bg-[var(--color-blue-100)] hover:text-white">
                 <img className="w-5 h-5 mr-4" src={briefcase} alt="maleta" />
                 <span className="font-medium">Clientes</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center p-3 rounded-lg text-gray-400 hover:bg-[var(--color-blue-100)] hover:text-white">
+            <Link to="/services" className="flex items-center p-3 rounded-lg text-gray-400 hover:bg-[var(--color-blue-100)] hover:text-white">
                 <img className="w-5 h-5 mr-4" src={tool} alt="ferramenta" />
                 <span className="font-medium">Serviços</span>
-              </a>
+            </Link>
             </li>
           </ul>
         </nav>

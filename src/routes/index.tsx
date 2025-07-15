@@ -1,16 +1,36 @@
-import { BrowserRouter } from "react-router";
+import { Routes, Route } from "react-router-dom"
 
-import { AuthRoutes } from "./AuthRoutes";
-import { AdminRoutes } from "./AdminRoutes";
+import { AppLayout } from "../layouts/AppLayout"
+import { AuthLayout } from "../layouts/AuthLayout"
+import { Tickets } from "../pages/Tickets"
+import { Technicians } from "../pages/Technicians"
+import { SignIn } from "../pages/SignIn"
+import { SignUp } from "../pages/Signup"
+import { NotFound } from "../pages/NotFound"
 
-// Mude para 'false' para ver a tela de login.
-// Mude para 'true' para ver o painel do admin.
-const isAuthenticated = false; 
+// Mude para 'true' para testar a rota de admin.
+const isAuthenticated = true; 
 
-export function Routes() {
+export function AppRoutes() {
+  if (!isAuthenticated) {
+    return (
+      <Routes>
+        <Route path="/" element={<AuthLayout />}>
+          <Route index element={<SignIn />} />
+          <Route path="signup" element={<SignUp />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    );
+  }
+
   return (
-    <BrowserRouter>
-      {isAuthenticated ? <AdminRoutes /> : <AuthRoutes />}
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<AppLayout />}>
+        <Route index element={<Tickets />} /> 
+        <Route path="technicians" element={<Technicians />} />
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }

@@ -60,7 +60,6 @@ export function Tickets() {
                 <th className="px-6 py-3 text-[var(--color-gray-400)] font-medium">Cliente</th>
                 <th className="px-6 py-3 text-[var(--color-gray-400)]">Técnico</th>
                 <th className="px-6 py-3 text-[var(--color-gray-400)]">Status</th>
-                <th className="px-6 py-3"></th>
               </tr>
             </thead>
             <tbody className="text-[var(--color-gray-200)]">

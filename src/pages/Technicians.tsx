@@ -1,4 +1,3 @@
-import React from 'react';
 
 const EditIcon = () => (
   <svg
@@ -22,7 +21,7 @@ const techniciansData = [
     name: 'Carlos Silva',
     initials: 'CS',
     email: 'carlos.silva@test.com',
-    availability: ['08:00', '09:00', '10:00', '11:00', '+4'],
+    availability: ['08:00', '09:00', '10:00', '11:00', '14:00'],
   },
   {
     name: 'Ana Oliveira',
@@ -40,7 +39,7 @@ const techniciansData = [
     name: 'Marcos Alves',
     initials: 'MA',
     email: 'marcos.alves@test.com',
-    availability: ['07:00', '09:00', '11:00', '15:00', '+3'],
+    availability: ['07:00', '09:00', '11:00', '15:00', '18:00'],
   },
 ];
 
@@ -52,17 +51,17 @@ export function Technicians() {
         <button className="px-4 py-2 border rounded-lg text-sm font-semibold text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-opacity-50">+ Novo</button>
       </div>
 
-      <div className="mt-7 overflow-hidden border border-gray-200 rounded-lg shadow-sm">
-        <table className="min-w-full divide-y divide-gray-200">
+      <div className="mt-7 overflow-hidden border border-gray-500  rounded-lg shadow-sm">
+        <table className="min-w-full divide-y divide-gray-500">
           <thead className="bg-gray-50">
             <tr>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/3">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider w-1/3">
                 Nome
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/3">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider w-1/3">
                 E-mail
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/3">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider w-1/3">
                 Disponibilidade
               </th>
               <th scope="col" className="relative px-6 py-3">
@@ -93,8 +92,7 @@ export function Technicians() {
                     {tech.availability.map((time) => (
                       <span
                         key={time}
-                        className="px-2.5 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800"
-                      >
+                        className="px-2.5 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-500 text-gray-200">
                         {time}
                       </span>
                     ))}

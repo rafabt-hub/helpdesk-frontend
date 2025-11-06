@@ -14,11 +14,11 @@ export function SignIn() {
   }
 
   return (
-    <div className="lg:w-100 w-85 h-80 flex gap-5 border rounded-2xl border-[var(--color-gray-500)]">
+    <div className="lg:w-100 w-85 h-80 flex gap-5 border rounded-2xl border-gray-500">
       <form onSubmit={onSubmit} className="w-full flex flex-col items-center p-4 gap-5">
         <div className="w-full">
-          <h1 className="text-xl text-[var(--color-gray-100)] mb-2">Acesse o portal</h1>
-          <p className="text-xs text-[var(--color-gray-400)]">Entre usando seu e-mail e senha cadastrados</p>
+          <h1 className="text-xl text-gray-100 mb-2">Acesse o portal</h1>
+          <p className="text-xs text-gray-100">Entre usando seu e-mail e senha cadastrados</p>
         </div>
 
         <Input 
@@ -39,9 +39,9 @@ export function SignIn() {
 
         <Button type="submit" isLoading={isLoading}>Entrar</Button>
 
-        <div className="lg:w-100 w-85 flex flex-col p-4 mt-4 border rounded-2xl border-[var(--color-gray-500)]">
-         <h1 className="w-full m-0 text-sm text-[var(--color-gray-100)] mb-2">Ainda não tem uma conta?</h1>
-         <p className="w-full m-0 text-sm text-[var(--color-gray-400)]">Cadastre agora mesmo</p>
+        <div className="lg:w-100 w-85 flex flex-col p-4 mt-4 border rounded-2xl border-gray-500">
+         <h1 className="w-full m-0 text-sm text-gray-100 mb-2">Ainda não tem uma conta?</h1>
+         <p className="w-full m-0 text-sm text-gray-400">Cadastre agora mesmo</p>
 
          <Button variant="white" href="/signup">Criar conta</Button>   
         </div>

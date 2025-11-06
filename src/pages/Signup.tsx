@@ -15,11 +15,11 @@ export function SignUp() {
   }
 
   return (
-    <div className="lg:w-100 w-85 h-95 flex gap-4 border rounded-2xl border-[var(--color-gray-500)]">
+    <div className="lg:w-100 w-85 h-95 flex gap-4 border rounded-2xl border-gray-500">
       <form onSubmit={onSubmit} className="w-full flex flex-col items-center p-4 gap-3">
         <div className="w-full">
-          <h1 className="text-xl text-[var(--color-gray-100)] mb-2">Crie sua conta</h1>
-          <p className="text-xs text-[var(--color-gray-400)]">Informe seu nome, e-mail e senha</p>
+          <h1 className="text-xl text-gray-100 mb-2">Crie sua conta</h1>
+          <p className="text-xs text-gray-400">Informe seu nome, e-mail e senha</p>
         </div>
 
         <Input 
@@ -44,13 +44,13 @@ export function SignUp() {
         placeholder="Digite sua senha"
         onChange={(e) => setPassword(e.target.value)}
         />
-        <span className="w-full mt-0 text-xs text-[var(--color-gray-400)]">Mínimo de 6 dígitos</span>
+        <span className="w-full mt-0 text-xs text-gray-400">Mínimo de 6 dígitos</span>
 
         <Button type="submit" isLoading={isLoading}>Cadastrar</Button>
 
-        <div className="lg:w-100 w-85 flex flex-col p-4 mt-4 border rounded-2xl border-[var(--color-gray-500)]">
-         <h1 className="w-full m-0 text-sm text-[var(--color-gray-100)] mb-2">Já tem uma conta?</h1>
-         <p className="w-full m-0 text-sm text-[var(--color-gray-400)]">Entre agora mesmo</p>
+        <div className="lg:w-100 w-85 flex flex-col p-4 mt-4 border rounded-2xl border-gray-500 bg-gray-800">
+         <h1 className="w-full m-0 text-sm text-gray-100 mb-2">Já tem uma conta?</h1>
+         <p className="w-full m-0 text-sm text-gray-400">Entre agora mesmo</p>
 
          <Button variant="white" href="/">Acessar conta</Button> 
         </div>

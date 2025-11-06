@@ -46,23 +46,23 @@ export function Tickets() {
     <>
       <div className="bg-white rounded-lg shadow-md overflow-hidden">
         <div className="p-4 lg:p-6 border-b lg:border-none">
-          <h2 className="text-xl lg:text-2xl font-bold text-[var(--color-blue-100)]">Chamados</h2>
+          <h2 className="text-xl lg:text-2xl font-bold text-blue-300">Chamados</h2>
         </div>
 
         <div className="hidden lg:block overflow-x-auto">
           <table className="w-full text-sm">
             <thead className="text-left">
               <tr>
-                <th className="px-6 py-3 text-[var(--color-gray-400)] font-medium">Atualizado em</th>
-                <th className="px-6 py-3 text-[var(--color-gray-400)] font-medium">Id</th>
-                <th className="px-6 py-3 text-[var(--color-gray-400)] font-medium">Título e Serviço</th>
-                <th className="px-6 py-3 text-[var(--color-gray-400)] font-medium">Valor total</th>
-                <th className="px-6 py-3 text-[var(--color-gray-400)] font-medium">Cliente</th>
-                <th className="px-6 py-3 text-[var(--color-gray-400)]">Técnico</th>
-                <th className="px-6 py-3 text-[var(--color-gray-400)]">Status</th>
+                <th className="px-6 py-3 text-gray-400 font-medium">Atualizado em</th>
+                <th className="px-6 py-3 text-gray-400 font-medium">Id</th>
+                <th className="px-6 py-3 text-gray-400 font-medium">Título e Serviço</th>
+                <th className="px-6 py-3 text-gray-400 font-medium">Valor total</th>
+                <th className="px-6 py-3 text-gray-400 font-medium">Cliente</th>
+                <th className="px-6 py-3 text-gray-400 font-medium">Técnico</th>
+                <th className="px-6 py-3 text-gray-400 font-medium">Status</th>
               </tr>
             </thead>
-            <tbody className="text-[var(--color-gray-200)]">
+            <tbody className="text-gray-400">
               {chamados.map(chamado => (
                 <TicketItem key={chamado.id} chamado={chamado} layout="table" onShowDetails={handleShowDetails} />
               ))}

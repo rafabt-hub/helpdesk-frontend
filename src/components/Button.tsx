@@ -12,8 +12,8 @@ export function Button({ children, isLoading, type = "button", variant = "black"
   const baseStyles = "w-full mt-4 text-sm py-3 px-6 rounded transition ease-linear cursor-pointer disabled:opacity-50 disabled:cursor-progress"
 
   const variantStyles = {
-    black: "bg-[var(--color-gray-100)] text-white hover:bg-[var(--color-gray-300)]",
-    white: "bg-[var(--color-gray-500)] text-black hover:bg-[var(--color-gray-300)]",
+    black: "bg-black text-white hover:bg-gray-600",
+    white: "bg-gray-300 text-black hover:bg-gray-700",
   }
 
   const combinedClasses = `${baseStyles} ${variantStyles[variant]}`

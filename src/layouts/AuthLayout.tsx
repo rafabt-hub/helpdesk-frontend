@@ -10,7 +10,7 @@ export function AuthLayout() {
       <main className="w-full lg:w-1/2 mt-4 h-full bg-white flex flex-col items-center rounded-t-[2rem] lg:rounded-tr-none shadow-2xl">
         <div className="flex items-center justify-center gap-4 mb-5 mt-5">
           <img src={logoSvg} alt="Logo" className="w-14 h-14" />
-          <h1 className="text-2xl text-[var(--color-blue-100)] font-bold">HelpDesk</h1>
+          <h1 className="text-2xl text-blue-300 font-bold">HelpDesk</h1>
         </div>
 
         <Outlet />

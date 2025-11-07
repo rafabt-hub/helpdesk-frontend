@@ -14,7 +14,7 @@ export function AppLayout() {
           </div>
           <div className="ml-3">
             <h1 className="font-bold text-lg">HelpDesk</h1>
-            <p className="text-xs text-[var(--color-blue-100)] font-bold">ADMIN</p>
+            <p className="text-xs text-blue-300 font-bold">ADMIN</p>
           </div>
         </div>
 
@@ -31,7 +31,7 @@ export function AppLayout() {
 
       <div className="flex-1 flex flex-col mt-4 w-full lg:w-auto">
         <header className="lg:hidden flex items-center justify-between p-4 bg-black text-white shadow-md">
-          <button className="p-2 bg-[var(--color-gray-200)] rounded">
+          <button className="p-2 bg-gray-300 rounded">
             <SmallMenu />
           </button>
           <div className="flex items-center">

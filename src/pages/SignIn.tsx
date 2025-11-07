@@ -17,8 +17,8 @@ export function SignIn() {
     <div className="lg:w-100 w-85 h-80 flex gap-5 border rounded-2xl border-gray-500">
       <form onSubmit={onSubmit} className="w-full flex flex-col items-center p-4 gap-5">
         <div className="w-full">
-          <h1 className="text-xl text-gray-100 mb-2">Acesse o portal</h1>
-          <p className="text-xs text-gray-100">Entre usando seu e-mail e senha cadastrados</p>
+          <h1 className="text-xl text-gray-700 mb-2">Acesse o portal</h1>
+          <p className="text-xs text-gray-700">Entre usando seu e-mail e senha cadastrados</p>
         </div>
 
         <Input 

@@ -32,19 +32,19 @@ export function SmallMenu() {
           <nav className="flex-1 w-full">
             <ul className="space-y-1 px-2 pb-2">
               <li>
-                <Link to="tickets" className="flex items-center p-2 rounded-lg text-gray-300 hover:bg-[var(--color-blue-100)] hover:text-white transition">
+                <Link to="tickets" className="flex items-center p-2 rounded-lg text-gray-300 hover:bg-blue-300 hover:text-white transition">
                   <img className="w-5 h-5 mr-3" src={clipboard} alt="Chamados" />
                   <span className="font-medium">Chamados</span>
                 </Link>
               </li>
               <li>
-                <Link to="technicians" className="flex items-center p-2 rounded-lg text-gray-300 hover:bg-[var(--color-blue-100)] hover:text-white transition">
+                <Link to="technicians" className="flex items-center p-2    rounded-lg text-gray-300 hover:bg-blue-300  hover:text-white transition">
                   <img className="w-5 h-5 mr-3" src={users} alt="Técnicos" />
                   <span className="font-medium">Técnicos</span>
                 </Link>
               </li>
               <li>
-                <Link to="services" className="flex items-center p-2 rounded-lg text-gray-300 hover:bg-[var(--color-blue-100)] hover:text-white transition">
+                <Link to="services" className="flex items-center p-2 rounded-lg text-gray-300 hover:bg-blue-300 hover:text-white transition">
                   <img className="w-5 h-5 mr-3" src={tool} alt="Serviços" />
                   <span className="font-medium">Serviços</span>
                 </Link>

@@ -60,6 +60,7 @@ export function Tickets() {
                 <th className="px-6 py-3 text-gray-400 font-medium">Cliente</th>
                 <th className="px-6 py-3 text-gray-400 font-medium">Técnico</th>
                 <th className="px-6 py-3 text-gray-400 font-medium">Status</th>
+                <th className="px-6 py-3 text-gray-400 font-medium">Detalhes</th>
               </tr>
             </thead>
             <tbody className="text-gray-400">

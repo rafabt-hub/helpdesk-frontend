@@ -18,8 +18,8 @@ export function SignUp() {
     <div className="lg:w-100 w-85 h-95 flex gap-4 border rounded-2xl border-gray-500">
       <form onSubmit={onSubmit} className="w-full flex flex-col items-center p-4 gap-3">
         <div className="w-full">
-          <h1 className="text-xl text-gray-100 mb-2">Crie sua conta</h1>
-          <p className="text-xs text-gray-400">Informe seu nome, e-mail e senha</p>
+          <h1 className="text-xl text-black mb-2">Crie sua conta</h1>
+          <p className="text-xs text-gray-600">Informe seu nome, e-mail e senha</p>
         </div>
 
         <Input 
@@ -48,9 +48,9 @@ export function SignUp() {
 
         <Button type="submit" isLoading={isLoading}>Cadastrar</Button>
 
-        <div className="lg:w-100 w-85 flex flex-col p-4 mt-4 border rounded-2xl border-gray-500 bg-gray-800">
-         <h1 className="w-full m-0 text-sm text-gray-100 mb-2">Já tem uma conta?</h1>
-         <p className="w-full m-0 text-sm text-gray-400">Entre agora mesmo</p>
+        <div className="lg:w-100 w-85 flex flex-col p-4 mt-4 border rounded-2xl border-gray-500 bg-white">
+         <h1 className="w-full m-0 text-sm text-black mb-2">Já tem uma conta?</h1>
+         <p className="w-full m-0 text-sm text-gray-600">Entre agora mesmo</p>
 
          <Button variant="white" href="/">Acessar conta</Button> 
         </div>

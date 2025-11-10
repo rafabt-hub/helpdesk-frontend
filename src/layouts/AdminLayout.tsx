@@ -1,8 +1,8 @@
 import { Outlet } from "react-router"
 import logoSvg from "../assets/Logo_IconDark.svg"
-import { SideBar } from "../components/SideBar"
-import { AvatarMenu } from "../components/Avatar"
-import { SmallMenu } from "../components/Small-menu"
+import { SideBar } from "../components/AdminBar"
+import { AvatarMenu } from "../components/AvatarMenu"
+import { SmallMenu } from "../components/SmallMenu"
 
 export function AppLayout() {
   return (

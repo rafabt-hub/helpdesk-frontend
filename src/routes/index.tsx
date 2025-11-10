@@ -7,8 +7,10 @@ import { Technicians } from "../pages/Technicians"
 import { SignIn } from "../pages/SignIn"
 import { SignUp } from "../pages/Signup"
 import { NotFound } from "../pages/NotFound"
+import { Clients } from "../pages/Clients"
+import { Services } from "../pages/Services"
 
-// Mude para 'true' para testar a rota de admin.
+// Mude para 'true' para testar a rota de admin e false para telas de login
 const isAuthenticated = true; 
 
 export function AppRoutes() {
@@ -29,6 +31,8 @@ export function AppRoutes() {
       <Route path="/" element={<AppLayout />}>
         <Route index element={<Tickets />} /> 
         <Route path="technicians" element={<Technicians />} />
+        <Route path="clients" element={<Clients />} />
+        <Route path="services" element={<Services />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

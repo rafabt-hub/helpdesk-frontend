@@ -2,15 +2,14 @@ import { Routes, Route } from "react-router-dom"
 
 import { SignIn } from "../pages/SignIn"
 import { SignUp } from "../pages/Signup"
-import { NewTech } from "../pages/NewTech"
 import { Clients } from "../pages/Clients"
 import { Tickets } from "../pages/Tickets"
 import { Services } from "../pages/Services"
 import { NotFound } from "../pages/NotFound"
-import { EditTech } from "../pages/EditTech"
 import { AdminLayout } from "../layouts/AdminLayout"
 import { AuthLayout } from "../layouts/AuthLayout"
 import { Technicians } from "../pages/Technicians"
+import { TechProfile } from "../pages/TechProfile"
 import { TicketsDetails } from "../pages/TicketsDetails"
 
 // Mude para 'true' para testar a rota de admin e false para telas de login
@@ -35,8 +34,8 @@ export function AppRoutes() {
         <Route index element={<Tickets />} />
         <Route path="tickets/:id" element={<TicketsDetails />} /> 
         <Route path="technicians" element={<Technicians />} />
-        <Route path="/technicians/:email/edit" element={<EditTech />} />
-        <Route path="/technicians/new" element={<NewTech />} />
+        <Route path="technicians/:email" element={<TechProfile />} />
+        <Route path="technicians/new" element={<TechProfile />} />
         <Route path="clients" element={<Clients />} />
         <Route path="services" element={<Services />} />
       </Route>

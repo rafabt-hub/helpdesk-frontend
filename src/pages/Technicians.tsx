@@ -42,8 +42,8 @@ export function Technicians() {
         </button>
       </div>
 
-      <div className="mt-7 overflow-hidden border border-gray-500 rounded-lg shadow-sm">
-        <table className="min-w-full divide-y divide-gray-500">
+      <div className="mt-7 overflow-hidden border border-gray-300 rounded-lg shadow-sm">
+        <table className="min-w-full divide-y divide-gray-300">
           <thead className="bg-gray-50">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/3">
@@ -83,7 +83,7 @@ export function Technicians() {
                     {tech.availability.map((time) => (
                       <span
                         key={time}
-                        className="px-2.5 py-1 inline-flex text-xs font-semibold rounded-full bg-gray-500 text-gray-200"
+                        className="px-2.5 py-1 inline-flex text-xs font-semibold rounded-full bg-gray-200 text-gray-500"
                       >
                         {time}
                       </span>

@@ -60,79 +60,113 @@ export function Tickets() {
   }
 
   return (
-    <div className="p-6">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-blue-600">Chamados</h1>
-      </div>
-
-      <div className="overflow-x-auto bg-white rounded-xl shadow">
-        <table className="w-full text-left border-collapse">
-          <thead>
-            <tr className="bg-gray-50 text-sm text-gray-600">
-              <th className="px-4 py-3 font-medium">Atualizado em</th>
-              <th className="px-4 py-3 font-medium">ID</th>
-              <th className="px-4 py-3 font-medium">Título e Serviço</th>
-              <th className="px-4 py-3 font-medium">Valor Total</th>
-              <th className="px-4 py-3 font-medium">Cliente</th>
-              <th className="px-4 py-3 font-medium">Técnico</th>
-              <th className="px-4 py-3 font-medium text-center">Status</th>
-            </tr>
-          </thead>
-
-          <tbody className="text-sm text-gray-800">
-            {tickets.map((ticket) => (
-              <tr
-                key={ticket.id}
-                className="border-t border-gray-100 hover:bg-gray-50 transition"
-              >
-                <td className="px-4 py-3">{ticket.updatedAt}</td>
-                <td className="px-4 py-3 text-gray-500">{ticket.id}</td>
-                <td className="px-4 py-3">
-                  <div className="font-semibold">{ticket.title}</div>
-                  <div className="text-xs text-gray-500">{ticket.service}</div>
-                </td>
-                <td className="px-4 py-3">{ticket.total}</td>
-
-                <td className="px-4 py-3">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-semibold">
-                      {getInitials(ticket.client)}
-                    </div>
-                    <span>{ticket.client}</span>
-                  </div>
-                </td>
-
-                <td className="px-4 py-3">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-semibold">
-                      {getInitials(ticket.technician)}
-                    </div>
-                    <span>{ticket.technician}</span>
-                  </div>
-                </td>
-
-                <td className="px-4 py-3 text-center">
-                  <StatusBadge status={ticket.status as any} />
-                </td>
-
-                <td className="px-4 py-3 text-center">
-                  <button
-                    onClick={() => handleDetails(ticket.id)}
-                    className="inline-flex items-center justify-center p-1.5 rounded-md hover:bg-gray-100 transition"
-                    title="Ver detalhes"
-                  >
-                    <img
-                      src={penLine}
-                      alt="Detalhes"
-                      className="w-4 h-4 opacity-70"
-                    />
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+  <div className="p-6 w-full">
+    <div className="flex justify-between items-center mb-6">
+      <h1 className="text-2xl font-bold text-blue-600">Chamados</h1>
     </div>
-  );
+
+    <div className="overflow-x-auto bg-white rounded-xl shadow hidden lg:block">
+      <table className="w-full text-left border-collapse">
+        <thead>
+          <tr className="bg-gray-50 text-sm text-gray-600">
+            <th className="px-4 py-3 font-medium">Atualizado em</th>
+            <th className="px-4 py-3 font-medium">ID</th>
+            <th className="px-4 py-3 font-medium">Título e Serviço</th>
+            <th className="px-4 py-3 font-medium">Valor Total</th>
+            <th className="px-4 py-3 font-medium">Cliente</th>
+            <th className="px-4 py-3 font-medium">Técnico</th>
+            <th className="px-4 py-3 font-medium text-center">Status</th>
+            <th className="px-4 py-3 font-medium text-center">Detalhes</th>
+          </tr>
+        </thead>
+
+        <tbody className="text-sm text-gray-800">
+          {tickets.map((ticket) => (
+            <tr
+              key={ticket.id}
+              className="border-t border-gray-100 hover:bg-gray-50 transition"
+            >
+              <td className="px-4 py-3">{ticket.updatedAt}</td>
+              <td className="px-4 py-3 text-gray-500">{ticket.id}</td>
+              <td className="px-4 py-3">
+                <div className="font-semibold">{ticket.title}</div>
+                <div className="text-xs text-gray-500">{ticket.service}</div>
+              </td>
+              <td className="px-4 py-3">{ticket.total}</td>
+
+              <td className="px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-semibold">
+                    {getInitials(ticket.client)}
+                  </div>
+                  <span>{ticket.client}</span>
+                </div>
+              </td>
+
+              <td className="px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-semibold">
+                    {getInitials(ticket.technician)}
+                  </div>
+                  <span>{ticket.technician}</span>
+                </div>
+              </td>
+
+              <td className="px-4 py-3 text-center">
+                <StatusBadge status={ticket.status as any} />
+              </td>
+
+              <td className="px-4 py-3 text-center">
+                <button
+                  onClick={() => handleDetails(ticket.id)}
+                  className="inline-flex items-center justify-center p-1.5 rounded-md hover:bg-gray-100 transition"
+                  title="Ver detalhes"
+                >
+                  <img
+                    src={penLine}
+                    alt="Detalhes"
+                    className="w-4 h-4 opacity-70"
+                  />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div className="flex flex-col gap-4 lg:hidden">
+      {tickets.map((ticket) => (
+        <div
+          key={ticket.id}
+          className="bg-white rounded-xl shadow p-4 border border-gray-100"
+        >
+          <div className="flex justify-between items-center mb-2">
+            <span className="text-xs text-gray-500">{ticket.updatedAt}</span>
+            <StatusBadge status={ticket.status as any} />
+          </div>
+
+          <div className="font-semibold text-gray-800">{ticket.title}</div>
+          <div className="text-xs text-gray-500 mb-3">{ticket.service}</div>
+
+          <div className="flex items-center justify-between mt-2">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-semibold">
+                {getInitials(ticket.client)}
+              </div>
+              <span className="text-sm">{ticket.client}</span>
+            </div>
+
+            <button
+              onClick={() => handleDetails(ticket.id)}
+              className="p-1 rounded hover:bg-gray-100"
+            >
+              <img src={penLine} className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
 }

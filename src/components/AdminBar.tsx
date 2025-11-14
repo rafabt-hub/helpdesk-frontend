@@ -4,7 +4,7 @@ import clipboard from "../assets/icons/clipboard-list.svg"
 import briefcase from "../assets/icons/briefcase-business.svg"
 import { Link } from "react-router-dom"
 
-export function SideBar() {
+export function AdminBar() {
   return (
     <nav className="flex-1">
           <ul className="space-y-2">

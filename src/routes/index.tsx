@@ -8,7 +8,7 @@ import { Tickets } from "../pages/Tickets"
 import { Services } from "../pages/Services"
 import { NotFound } from "../pages/NotFound"
 import { EditTech } from "../pages/EditTech"
-import { AppLayout } from "../layouts/AppLayout"
+import { AdminLayout } from "../layouts/AdminLayout"
 import { AuthLayout } from "../layouts/AuthLayout"
 import { Technicians } from "../pages/Technicians"
 import { TicketsDetails } from "../pages/TicketsDetails"
@@ -31,7 +31,7 @@ export function AppRoutes() {
 
   return (
     <Routes>
-      <Route path="/" element={<AppLayout />}>
+      <Route path="/" element={<AdminLayout />}>
         <Route index element={<Tickets />} />
         <Route path="tickets/:id" element={<TicketsDetails />} /> 
         <Route path="technicians" element={<Technicians />} />

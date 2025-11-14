@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useState } from "react";
 import { ActiveBadge } from "../components/ActiveBadge";
+
 import penIcon from "../assets/icons/pen-line.svg";
 import banIcon from "../assets/icons/ban.svg";
 import checkIcon from "../assets/icons/circle-check.svg";
@@ -43,7 +44,9 @@ export function Services() {
       setServices([...services, newService]);
     } else {
       setServices(
-        services.map((s) => (s.id === editingService.id ? editingService : s))
+        services.map((s) =>
+          s.id === editingService.id ? editingService : s
+        )
       );
     }
 
@@ -59,9 +62,10 @@ export function Services() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto p-4">
+    <div className="w-full p-4">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-semibold text-blue-600">Serviços</h2>
+
         <button
           onClick={openNewServiceModal}
           className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800"
@@ -72,38 +76,43 @@ export function Services() {
 
       <div className="border border-gray-300 rounded-xl p-4">
         <div className="hidden md:grid grid-cols-12 px-4 py-2 text-sm text-gray-500 font-medium">
-          <span className="col-span-6">Título</span>
-          <span className="col-span-3">Valor</span>
+          <span className="col-span-5">Título</span>
+          <span className="col-span-2">Valor</span>
           <span className="col-span-3">Status</span>
         </div>
 
         {services.map((service) => (
           <div
             key={service.id}
-            className="grid grid-cols-12 items-center py-3 px-4 border-b last:border-none hover:bg-gray-50 transition"
+            className="grid grid-cols-12 items-center py-3 px-4 border-b border-gray-200 hover:bg-gray-50 transition"
           >
-            <div className="col-span-12 md:col-span-6 font-medium text-gray-800 truncate">
+            <div className="col-span-12 md:col-span-5 font-medium text-gray-800 truncate">
               {service.title}
             </div>
 
-            <div className="col-span-12 md:col-span-3 mt-1 md:mt-0 text-gray-700">
+            <div className="col-span-12 md:col-span-2 text-gray-700 mt-1 md:mt-0">
               R$ {service.price.toFixed(2)}
             </div>
 
-            <div className="col-span-12 md:col-span-3 flex items-center justify-between md:justify-start gap-4 mt-2 md:mt-0">
+            <div className="col-span-12 md:col-span-3 flex md:block justify-start mt-2 md:mt-0">
               <ActiveBadge status={service.active ? "Ativo" : "Inativo"} />
+            </div>
 
+            <div className="col-span-6 md:col-span-1 flex justify-center mt-2 md:mt-0">
               <button
                 onClick={() => toggleServiceStatus(service)}
-                className="p-1 hover:bg-gray-200 rounded-lg"
+                className="flex items-center gap-1 text-sm text-gray-700 hover:underline"
               >
                 <img
                   src={service.active ? banIcon : checkIcon}
                   alt="toggle"
                   className="w-5 h-5"
                 />
+                {service.active ? "Desativar" : "Ativar"}
               </button>
+            </div>
 
+            <div className="col-span-6 md:col-span-1 flex justify-center mt-2 md:mt-0">
               <button
                 onClick={() => openEditModal(service)}
                 className="p-1 hover:bg-gray-200 rounded-lg"
@@ -116,13 +125,18 @@ export function Services() {
       </div>
 
       {modalOpen && editingService && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm z-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black/30 backdrop-blur-[1px] z-50">
           <div className="bg-white w-full max-w-md p-6 rounded-xl shadow-lg relative">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-semibold">
                 {editingService.id === 0 ? "Cadastro de serviço" : "Serviço"}
               </h3>
-              <button onClick={() => setModalOpen(false)} className="text-gray-500">✕</button>
+              <button
+                onClick={() => setModalOpen(false)}
+                className="text-gray-500"
+              >
+                ✕
+              </button>
             </div>
 
             <label className="text-xs text-gray-500">TÍTULO</label>
@@ -130,7 +144,10 @@ export function Services() {
               type="text"
               value={editingService.title}
               onChange={(e) =>
-                setEditingService({ ...editingService, title: e.target.value })
+                setEditingService({
+                  ...editingService,
+                  title: e.target.value,
+                })
               }
               className="w-full border-b border-gray-300 mb-4 focus:outline-none py-1"
               placeholder="Nome do serviço"
@@ -141,7 +158,10 @@ export function Services() {
               type="number"
               value={editingService.price}
               onChange={(e) =>
-                setEditingService({ ...editingService, price: Number(e.target.value) })
+                setEditingService({
+                  ...editingService,
+                  price: Number(e.target.value),
+                })
               }
               className="w-full border-b border-gray-300 mb-6 focus:outline-none py-1"
             />

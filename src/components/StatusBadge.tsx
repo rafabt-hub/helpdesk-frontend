@@ -5,9 +5,9 @@ import checked from "../assets/icons/circle-check-big.svg"
 type StatusType = 'Aberto' | 'Em atendimento' | 'Encerrado'
 
 const statusStyles: Record<StatusType, string> = {
-  'Aberto': 'bg-gray-500 text-red-400',
-  'Em atendimento': 'bg-gray-500 text-blue-400',
-  'Encerrado': 'bg-gray-500 text-green-300',
+  'Aberto': 'bg-red-200 text-red-600',
+  'Em atendimento': 'bg-blue-200 text-blue-600',
+  'Encerrado': 'bg-green-200 text-green-600',
 };
 
 const statusIcons: Record<StatusType, string> = {

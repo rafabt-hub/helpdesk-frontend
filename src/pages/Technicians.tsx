@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
-import penLine from "../assets/icons/pen-line.svg";
+import { useNavigate } from "react-router-dom"
+import penLine from "../assets/icons/pen-line.svg"
 
 const techniciansData = [
   {

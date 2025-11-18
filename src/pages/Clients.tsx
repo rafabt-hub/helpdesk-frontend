@@ -1,6 +1,6 @@
-import { useState } from "react";
-import penIcon from "../assets/icons/pen-line.svg";
-import trashIcon from "../assets/icons/trash.svg";
+import { useState } from "react"
+import penIcon from "../assets/icons/pen-line.svg"
+import trashIcon from "../assets/icons/trash.svg"
 
 interface Client {
   initials: string;
@@ -46,8 +46,7 @@ export function Clients() {
         {clients.map((client, index) => (
           <div
             key={index}
-            className="grid grid-cols-12 items-center py-3 px-4 border-b border-gray-200 hover:bg-gray-50 transition"
-          >
+            className="grid grid-cols-12 items-center py-3 px-4 border-b border-gray-200 hover:bg-gray-50 transition">
             <div className="flex items-center gap-3 col-span-12 md:col-span-6">
               <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold text-sm">
                 {client.initials}
@@ -104,8 +103,7 @@ export function Clients() {
 
             <button
               onClick={handleSave}
-              className="w-full bg-black text-white py-2 rounded-lg mt-2"
-            >
+              className="w-full bg-black text-white py-2 rounded-lg mt-2">
               Salvar
             </button>
           </div>

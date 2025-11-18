@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { ActiveBadge } from "../components/ActiveBadge";
+import { useState } from "react"
+import { ActiveBadge } from "../components/ActiveBadge"
 
-import penIcon from "../assets/icons/pen-line.svg";
-import banIcon from "../assets/icons/ban.svg";
-import checkIcon from "../assets/icons/circle-check.svg";
+import penIcon from "../assets/icons/pen-line.svg"
+import banIcon from "../assets/icons/ban.svg"
+import checkIcon from "../assets/icons/circle-check.svg"
 
 interface Service {
   id: number;

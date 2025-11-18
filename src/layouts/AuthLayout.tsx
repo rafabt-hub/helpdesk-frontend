@@ -1,4 +1,4 @@
-import { Outlet } from "react-router";
+import { Outlet } from "react-router"
 
 import logoSvg from "../assets/Logo_IconDark.svg"
 import bgImage from "../assets/Login_Background.png"

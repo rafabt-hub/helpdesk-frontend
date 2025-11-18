@@ -1,8 +1,8 @@
-import { Outlet } from "react-router";
-import logoSvg from "../assets/Logo_IconDark.svg";
-import { AdminBar } from "../components/AdminBar";
-import { AvatarMenu } from "../components/AvatarMenu";
-import { SmallMenu } from "../components/SmallMenu";
+import { Outlet } from "react-router"
+import logoSvg from "../assets/Logo_IconDark.svg"
+import { AdminBar } from "../components/AdminBar"
+import { AvatarMenu } from "../components/AvatarMenu"
+import { SmallMenu } from "../components/SmallMenu"
 
 export function AdminLayout() {
   return (
@@ -21,7 +21,7 @@ export function AdminLayout() {
         <AdminBar />
 
         <div className="flex items-center mt-auto">
-          <AvatarMenu />
+          <AvatarMenu role="admin" name="Usuário Adm" />
           <div className="ml-3">
             <p className="font-semibold text-sm">Usuário Adm</p>
             <p className="text-xs text-gray-400">user.adm@test.com</p>
@@ -46,7 +46,7 @@ export function AdminLayout() {
             </div>
           </div>
 
-          <AvatarMenu />
+          <AvatarMenu role="admin" name="Usuário Adm" />
         </header>
 
         <main className="flex-1 bg-white rounded-t-[2rem] lg:rounded-tr-none p-4 lg:p-8 overflow-x-auto overflow-y-hidden max-w-full">

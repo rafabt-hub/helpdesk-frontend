@@ -1,5 +1,5 @@
-import { useParams, useNavigate } from "react-router-dom";
-import { StatusBadge } from "../components/StatusBadge";
+import { useParams, useNavigate } from "react-router-dom"
+import { StatusBadge } from "../components/StatusBadge"
 
 export function TicketsDetails() {
   const { id } = useParams<{ id: string }>();

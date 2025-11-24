@@ -42,7 +42,7 @@ export function ClientLayout() {
             </div>
             <div className="ml-2">
               <h1 className="font-bold text-base">HelpDesk</h1>
-              <p className="text-xs text-blue-300 font-bold">ADMIN</p>
+              <p className="text-xs text-blue-300 font-bold">CLIENTE</p>
             </div>
           </div>
 

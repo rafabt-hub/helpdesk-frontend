@@ -136,7 +136,7 @@ export function TechLayout() {
           <AvatarMenu role="tech" name="Carlos Silva" />
         </header>
 
-        <main className="flex-1 bg-white rounded-t-[2rem] lg:rounded-tr-none p-6 lg:p-10">
+        <main className="flex-1 bg-white mt-2 rounded-t-[2rem] lg:rounded-tr-none p-6 lg:p-10">
 
           <h2 className="text-xl font-bold mb-6">Meus chamados</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

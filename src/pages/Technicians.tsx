@@ -72,9 +72,7 @@ export function Technicians() {
             </div>
 
             <button
-              onClick={() =>
-                navigate(`/technicians/${(tech.email)}`)
-              }
+              onClick={() => navigate(`/technicians/${(tech.email)}`)}
               className="w-9 h-9 p-2 rounded bg-gray-200 hover:bg-gray-400 transition self-center">
               <img src={penLine} alt="Editar técnico" className="w-4 h-4" />
             </button>
@@ -134,10 +132,8 @@ export function Technicians() {
                 <td className="px-6 py-4 whitespace-nowrap text-right">
                   <button
                     onClick={() =>
-                      navigate(`/technicians/${(tech.email)}`)
-                    }
-                    className="w-10 h-10 p-2 rounded bg-gray-200 hover:bg-gray-400 transition"
-                  >
+                      navigate(`/technicians/${(tech.email)}`)}
+                    className="w-10 h-10 p-2 rounded bg-gray-200 hover:bg-gray-400 transition">
                     <img src={penLine} alt="Editar técnico" className="w-5 h-5" />
                   </button>
                 </td>

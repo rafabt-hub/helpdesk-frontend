@@ -84,8 +84,7 @@ export function Tickets() {
           {tickets.map((ticket) => (
             <tr
               key={ticket.id}
-              className="border-t border-gray-100 hover:bg-gray-50 transition"
-            >
+              className="border-t border-gray-100 hover:bg-gray-50 transition">
               <td className="px-4 py-3">{ticket.updatedAt}</td>
               <td className="px-4 py-3 text-gray-500">{ticket.id}</td>
               <td className="px-4 py-3">

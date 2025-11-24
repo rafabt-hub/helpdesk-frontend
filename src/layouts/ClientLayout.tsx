@@ -49,7 +49,7 @@ export function ClientLayout() {
           <AvatarMenu role="client" name="Jose Silva" />
         </header>
 
-        <main className="flex-1 bg-white rounded-t-[2rem] lg:rounded-tr-none p-4 lg:p-8 overflow-x-auto overflow-y-hidden max-w-full">
+        <main className="flex-1 bg-white mt-2 rounded-t-[2rem] lg:rounded-tr-none p-4 lg:p-8 overflow-x-auto overflow-y-hidden max-w-full">
           <div className="w-full max-w-full">
             <Outlet />
           </div>

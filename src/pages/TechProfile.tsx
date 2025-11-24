@@ -76,8 +76,7 @@ export function TechProfile() {
         <div>
           <button
             onClick={() => navigate(-1)}
-            className="text-sm text-gray-500 hover:text-blue-600"
-          >
+            className="text-sm text-gray-500 hover:text-blue-600">
             ← Voltar
           </button>
 
@@ -89,15 +88,13 @@ export function TechProfile() {
         <div className="flex gap-2">
           <button
             onClick={() => navigate(-1)}
-            className="px-4 py-2 border rounded-lg bg-gray-200 hover:bg-gray-300"
-          >
+            className="px-4 py-2 border rounded-lg bg-gray-200 hover:bg-gray-300">
             Cancelar
           </button>
 
           <button
             onClick={handleSubmit}
-            className="px-4 py-2 rounded-lg text-white bg-black hover:bg-gray-800"
-          >
+            className="px-4 py-2 rounded-lg text-white bg-black hover:bg-gray-800">
             Salvar
           </button>
         </div>

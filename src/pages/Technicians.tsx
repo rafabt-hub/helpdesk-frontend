@@ -40,8 +40,7 @@ export function Technicians() {
 
         <button
           onClick={() => navigate("/technicians/new")}
-          className="px-4 py-2 border rounded-lg text-sm font-semibold text-white bg-black hover:bg-gray-800"
-        >
+          className="px-4 py-2 border rounded-lg text-sm font-semibold text-white bg-black hover:bg-gray-800">
           + Novo
         </button>
       </div>
@@ -50,8 +49,7 @@ export function Technicians() {
         {techniciansData.map((tech) => (
           <div
             key={tech.email}
-            className="border-gray-400 rounded-lg p-4 shadow-sm flex items-start justify-between bg-white"
-          >
+            className="border-gray-400 rounded-lg p-4 shadow-sm flex items-start justify-between bg-white">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-full bg-blue-800 flex items-center justify-center text-sm font-bold text-white">
                 {tech.initials}
@@ -65,8 +63,7 @@ export function Technicians() {
                   {tech.availability.map((time) => (
                     <span
                       key={time}
-                      className="px-2.5 py-1 text-xs font-semibold rounded-full bg-gray-200 text-gray-600"
-                    >
+                      className="px-2.5 py-1 text-xs font-semibold rounded-full bg-gray-200 text-gray-600">
                       {time}
                     </span>
                   ))}
@@ -78,8 +75,7 @@ export function Technicians() {
               onClick={() =>
                 navigate(`/technicians/${(tech.email)}`)
               }
-              className="w-9 h-9 p-2 rounded bg-gray-200 hover:bg-gray-400 transition self-center"
-            >
+              className="w-9 h-9 p-2 rounded bg-gray-200 hover:bg-gray-400 transition self-center">
               <img src={penLine} alt="Editar técnico" className="w-4 h-4" />
             </button>
           </div>

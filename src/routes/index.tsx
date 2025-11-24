@@ -11,12 +11,15 @@ import { AuthLayout } from "../layouts/AuthLayout"
 import { TechLayout } from "../layouts/TechLayout"
 import { Technicians } from "../pages/Technicians"
 import { TechProfile } from "../pages/TechProfile"
+import { ClientLayout } from "../layouts/ClientLayout"
 import { TicketsDetails } from "../pages/TicketsDetails"
+import { NewTicket } from "../pages/NewTicket"
+
 
 function getUserRole() {
   // return "admin"; 
-   return "tech";
-  // return "client";
+  // return "tech";
+   return "client";
 
   return null;
 }
@@ -75,6 +78,7 @@ export function AppRoutes() {
         <Route path="/" element={<ClientLayout />}>
           <Route index element={<Tickets />} />
           <Route path="tickets/:id" element={<TicketsDetails />} />
+          <Route path="tickets/new" element={<NewTicket />} />
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

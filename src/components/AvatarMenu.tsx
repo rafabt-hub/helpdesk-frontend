@@ -98,8 +98,7 @@ export function AvatarMenu({ role, name }: Props) {
                 key={item.label}
                 type="button"
                 onClick={item.action}
-                className="flex w-full text-left items-center text-gray-400 gap-2 px-4 py-2 hover:bg-gray-700"
-              >
+                className="flex w-full text-left items-center text-gray-400 gap-2 px-4 py-2 hover:bg-gray-700">
                 <img className="w-5 h-5" src={item.icon} alt={item.label} />
                 {item.label}
               </button>

@@ -17,9 +17,9 @@ import { NewTicket } from "../pages/NewTicket"
 
 
 function getUserRole() {
-  // return "admin"; 
+   return "admin"; 
   // return "tech";
-   return "client";
+  // return "client";
 
   return null;
 }

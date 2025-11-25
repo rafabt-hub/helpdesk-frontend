@@ -20,7 +20,7 @@ export function NewTicket() {
             <div>
               <label className="text-sm text-gray-600">Descrição</label>
               <textarea
-                rows={4}
+                rows={2}
                 placeholder="Descreva o que está acontecendo"
                 className="w-full mt-1 p-3 border-b border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>

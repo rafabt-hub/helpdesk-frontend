@@ -128,14 +128,12 @@ export function Clients() {
             <div className="flex gap-3 justify-end">
               <button
                 onClick={() => setDeletingClient(null)}
-                className="px-4 py-2 bg-gray-200 rounded-lg"
-              >
+                className="px-4 py-2 bg-gray-200 rounded-lg">
                 Cancelar
               </button>
               <button
                 onClick={handleDelete}
-                className="px-4 py-2 bg-black text-white rounded-lg"
-              >
+                className="px-4 py-2 bg-black text-white rounded-lg">
                 Sim, excluir
               </button>
             </div>

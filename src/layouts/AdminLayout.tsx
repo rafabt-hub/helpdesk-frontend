@@ -1,4 +1,4 @@
-import { Outlet } from "react-router"
+import { Outlet } from "react-router-dom"
 import logoSvg from "../assets/Logo_IconDark.svg"
 import { AdminBar } from "../components/AdminBar"
 import { AvatarMenu } from "../components/AvatarMenu"

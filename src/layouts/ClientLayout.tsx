@@ -1,4 +1,4 @@
-import { Outlet } from "react-router"
+import { Outlet } from "react-router-dom"
 import logoSvg from "../assets/Logo_IconDark.svg"
 import { ClientBar } from "../components/ClientBar"
 import { AvatarMenu } from "../components/AvatarMenu"
@@ -6,7 +6,7 @@ import { SmallMenu } from "../components/SmallMenu"
 
 export function ClientLayout() {
   return (
-    <div className="flex bg-black min-h-screen overflow-x-hidden"> 
+    <div className="flex bg-black h-screen overflow-hidden">
       <aside className="hidden lg:flex flex-col w-64 bg-black text-white p-4 shrink-0">
         <div className="flex items-center mb-10">
           <div className="w-10 h-1 rounded-full flex items-center justify-center">

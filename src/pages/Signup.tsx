@@ -1,18 +1,59 @@
+import { api } from "../services/api"
 import { Input } from "../components/Input"
 import { Button } from "../components/Button"
 import { useState } from "react"
+import { AxiosError } from "axios"
+import { z, ZodError } from "zod"
+import { useNavigate } from "react-router"
+
+const signUpSchema = z.object({
+  name: z.string().trim().min(1, { message: "Informe o nome" }),
+  email: z.string().email({ message: "E-mail inválido " }),
+  password: z.string().min(6, { message: "Senha deve ter pelo menos 6 dígitos" }),
+})
 
 export function SignUp() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [isLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
-  function onSubmit(e: React.FormEvent) {
+  const navigate = useNavigate()
+
+ async function onSubmit(e: React.FormEvent) {
     e.preventDefault()
 
-    console.log(name, email, password)
+    try {
+      setIsLoading(true)
+
+      const data = signUpSchema.parse({
+        name,
+        email,
+        password,
+      })
+
+      await api.post("/users", data)
+
+      if(confirm("Cadastrado com sucesso. Ir para tela de entrar?")){
+        navigate("/")
+      }
+
+    } catch (error) {
+      console.log(error)
+
+      if(error instanceof ZodError) {
+        return alert(error.issues[0].message)
+      }
+
+      if(error instanceof AxiosError){
+        return alert(error.response?.data.message)
+      }
+
+    alert("Não foi possível cadastrar!")
+  } finally {
+    setIsLoading(false)
   }
+}  
 
   return (
     <div className="lg:w-100 w-85 h-85 flex gap-4 border rounded-2xl border-gray-500">
@@ -26,21 +67,24 @@ export function SignUp() {
         required 
         legend="NOME"  
         placeholder="Digite o nome completo" 
-        onChange={(e) => setName(e.target.value)} />
+        onChange={(e) => setName(e.target.value)}
+        />
 
         <Input 
         required 
         legend="E-MAIL" 
         type="email" 
         placeholder="exemplo@email.com" 
-        onChange={(e) => setEmail(e.target.value)} />
+        onChange={(e) => setEmail(e.target.value)} 
+        />
 
         <Input 
         required 
         legend="SENHA" 
         type="password" 
         placeholder="Digite sua senha"
-        onChange={(e) => setPassword(e.target.value)} />
+        onChange={(e) => setPassword(e.target.value)} 
+        />
         <span className="w-full mt-0 text-xs text-gray-400">Mínimo de 6 dígitos</span>
 
         <Button type="submit" isLoading={isLoading}>Cadastrar</Button>

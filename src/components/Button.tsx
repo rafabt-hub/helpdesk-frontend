@@ -9,7 +9,7 @@ type Props = React.ComponentProps<"button"> & {
 }
 
 export function Button({ children, isLoading, type = "button", variant = "black", href, ...rest}: Props) {
-  const baseStyles = "w-full mt-2 text-sm py-2 px-6 rounded transition ease-linear cursor-pointer disabled:opacity-50 disabled:cursor-progress"
+  const baseStyles = "w-full mt-1 text-sm py-2 px-6 rounded transition ease-linear cursor-pointer disabled:opacity-50 disabled:cursor-progress"
 
   const variantStyles = {
     black: "bg-black text-white hover:bg-gray-600",

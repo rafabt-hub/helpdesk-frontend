@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { StatusBadge } from "../components/StatusBadge"
 import penLine from "../assets/icons/pen-line.svg"
+
 export function Tickets() {
   const navigate = useNavigate();
 

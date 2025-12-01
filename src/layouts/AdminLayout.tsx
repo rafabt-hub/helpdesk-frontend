@@ -32,9 +32,9 @@ export function AdminLayout() {
       <div className="flex-1 flex flex-col w-full overflow-x-hidden">
 
         <header className="lg:hidden flex items-center justify-between p-4 bg-black text-white shadow-md">
-          <button className="p-2 bg-gray-300 rounded">
+          <div className="p-2 bg-gray-300 rounded cursor-pointer">
             <SmallMenu />
-          </button>
+          </div>
 
           <div className="flex items-center">
             <div className="w-9 h-9 flex items-center justify-center">

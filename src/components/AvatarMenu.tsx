@@ -1,10 +1,8 @@
 import { useState, useRef, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
-
 import circleUser from "../assets/icons/circle-user.svg"
 import logoutIcon from "../assets/icons/log-out.svg"
-
 import { ProfileModal } from "./ProfileModal"
+import { useAuth } from "../hooks/useAuth"
 
 type Props = {
   role: "admin" | "tech" | "client";
@@ -12,11 +10,11 @@ type Props = {
 };
 
 export function AvatarMenu({ role, name }: Props) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [openProfile, setOpenProfile] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
+  const [openProfile, setOpenProfile] = useState(false)
+  const auth = useAuth()
 
-  const menuRef = useRef<HTMLDivElement>(null);
-  const navigate = useNavigate();
+  const menuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -33,38 +31,18 @@ export function AvatarMenu({ role, name }: Props) {
     setOpenProfile(true);
   };
 
-  const handleLogout = async () => {
-    try {
-      await fetch("https://sua-api.com/logout", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
-    } catch (err) {
-      console.log("Falha no logout da API, mas continuando...", err);
-    }
-
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    localStorage.removeItem("userEmail");
-
-    setIsOpen(false);
-    navigate("/login");
-  };
-
   const menuOptions = {
     admin: [
       { label: "Perfil", icon: circleUser, action: handleOpenProfile },
-      { label: "Sair", icon: logoutIcon, action: handleLogout },
+      { label: "Sair", icon: logoutIcon, action: auth.remove },
     ],
     tech: [
       { label: "Meu Perfil", icon: circleUser, action: handleOpenProfile },
-      { label: "Sair", icon: logoutIcon, action: handleLogout },
+      { label: "Sair", icon: logoutIcon, action: auth.remove },
     ],
     client: [
       { label: "Minha conta", icon: circleUser, action: handleOpenProfile },
-      { label: "Sair", icon: logoutIcon, action: handleLogout },
+      { label: "Sair", icon: logoutIcon, action: auth.remove },
     ],
   };
 
@@ -97,8 +75,9 @@ export function AvatarMenu({ role, name }: Props) {
               <button
                 key={item.label}
                 type="button"
-                onClick={item.action}
-                className="flex w-full text-left items-center text-gray-400 gap-2 px-4 py-2 hover:bg-gray-700">
+                onClick={item.action ? item.action : undefined}
+                className="flex w-full text-left items-center text-gray-400 gap-2 px-4 py-2 hover:bg-gray-700"
+              >
                 <img className="w-5 h-5" src={item.icon} alt={item.label} />
                 {item.label}
               </button>
@@ -107,15 +86,13 @@ export function AvatarMenu({ role, name }: Props) {
         )}
       </div>
 
-
       <ProfileModal
         open={openProfile}
         onClose={() => setOpenProfile(false)}
         role={role}
-        userName={name}
+        userName={localStorage.getItem("userName") || ""}
         userEmail={localStorage.getItem("userEmail") || ""}
       />
     </>
   );
 }
-

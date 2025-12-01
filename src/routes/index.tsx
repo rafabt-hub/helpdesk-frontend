@@ -1,21 +1,16 @@
-import { Loading } from "../components/Loading"
+import { useAuth } from "../hooks/useAuth"
 
+import { Loading } from "../components/Loading"
 import { AuthRoutes } from "./auth-routes"
 import { AdminRoutes } from "./admin-routes"
 import { ClientRoutes } from "./client-routes"
 import { TechniciansRoutes } from "./technicians-routes"
 
-const isLoading = false
-
-const session = {
-  user: {
-    role: "",
-  },
-}
-
 export function AppRoutes() {
+  const { session, isLoading } = useAuth()
+
   function Route() {
-    switch (session.user.role) {
+    switch (session?.user.role) {
       case "admin":
         return <AdminRoutes />
       case "technician":
